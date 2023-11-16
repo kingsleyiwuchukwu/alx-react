@@ -1,26 +1,29 @@
-import React from "react";
-import "./Notifications.css";
-import closeIcon from "./close-icon.png";
-import { getLatestNotification } from "./utils";
+import logo from "./holberton-logo.jpg";
+import "./App.css";
+import { getFullYear, getFooterCopy } from "./utils";
 
-function Notifications() {
+function App() {
   return (
-    <div className="Notifications">
-      <button
-        style={{ color: "#3a3a3a", fontWeight: "bold", background: "none", border: "none", fontSize: "15px", position: "absolute", right: "2px", top: "2px", cursor: "pointer" }}
-        aria-label="Close"
-        onClick={console.log("Close button has been clicked")}
-      >
-        <img src={closeIcon} alt="closeIcon" width="10px" />
-      </button>
-      <p>Here is the list of notifications</p>
-      <ul>
-        <li data="default">New course available</li>
-        <li data="urgent">New resume available</li>
-        <li data="urgent" dangerouslySetInnerHTML={{ __html: getLatestNotification() }}></li>
-      </ul>
+    <div className="App">
+      <div className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <h1>School dashboard</h1>
+      </div>
+      <div className="App-body">
+        <p>Login to access the full dashboard</p>
+	 <form>
+          <label htmlFor="email">Email:</label>
+          <input type="email" name="email"></input>
+          <label htmlFor="password">Password:</label>
+          <input type="password" name="password"></input>
+          <button>OK</button>
+        </form>
+      </div>
+      <div className="App-footer">
+        Copyright {getFullYear()} - {getFooterCopy()}
+      </div>
     </div>
   );
 }
 
-export default Notifications;
+export default App;
