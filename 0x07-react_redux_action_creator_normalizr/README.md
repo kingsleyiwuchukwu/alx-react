@@ -1,6 +1,6 @@
-## 0x07. React Redux action creator+normalizr
+# 0x07. React Redux action creator+normalizr
 
-#### Contents
+## Contents
 Normalizr’s purpose and how to use it
 schemas and normalization of nested JSON
 core concepts of Redux
